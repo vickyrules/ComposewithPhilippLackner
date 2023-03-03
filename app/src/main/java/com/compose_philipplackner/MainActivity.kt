@@ -1,7 +1,6 @@
 package com.compose_philipplackner
+import com.compose_philipplackner.ui.MeditationApp
 
-import android.graphics.Paint.Align
-import android.graphics.Paint.FontMetrics
 import android.os.Bundle
 import android.view.MotionEvent
 import androidx.activity.ComponentActivity
@@ -30,9 +29,8 @@ import androidx.compose.ui.input.pointer.pointerInteropFilter
 import androidx.compose.ui.layout.boundsInParent
 import androidx.compose.ui.layout.boundsInWindow
 import androidx.compose.ui.layout.onGloballyPositioned
-import androidx.compose.ui.modifier.modifierLocalOf
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
+
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.Font
@@ -45,6 +43,7 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.compose_philipplackner.ui.MeditationApp
 import com.compose_philipplackner.ui.theme.ComposePhilippLacknerTheme
 import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 import kotlin.math.PI
@@ -66,7 +65,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            ComposePhilippLacknerTheme {
+            ComposePhilippLacknerTheme(darkTheme = true) {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -352,5 +351,6 @@ fun ComposePreview() {
     //RowColmun()
     //TextStyling()
     //ComposeState()
-    MusicKnobWithVolumenBar()
+    //MusicKnobWithVolumenBar()
+    MeditationApp()
 }
